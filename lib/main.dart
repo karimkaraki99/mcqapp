@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MCQ APP',
+      title: 'MCQ APP test',
       home: Home() // calls the main page to display the application interface
     );
   }
