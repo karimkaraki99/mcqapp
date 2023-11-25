@@ -1,13 +1,7 @@
-/*
-Application ot demonstrate the use of:
-  - dropdown widget
-  - radio buttons
-  - checkboxes
-The application allows the user to select a car model, warranty year and the option
-to add car insurance. It then calculates the total car price.
- */
+
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'quiz.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MCQ APP 1234',
+      title: 'MCQ APP',
       home: Home() // calls the main page to display the application interface
     );
   }
