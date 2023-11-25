@@ -35,21 +35,20 @@ class _HomeState extends State<Home> {
               );
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Set the background color to white
+              primary: Colors.white,
             ),
             child: const Text(
               'Start Game',
-              style: TextStyle(fontSize: 20, color: Colors.blueGrey),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
           ),
             const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // Close the app
             SystemNavigator.pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.white12, // Set the background color to white
+            primary: Colors.white,
           ),
           child: const Text(
             'Exit App',
