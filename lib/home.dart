@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
             SystemNavigator.pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.white, // Set the background color to white
+            primary: Colors.white12, // Set the background color to white
           ),
           child: const Text(
             'Exit App',
