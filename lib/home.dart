@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('MCQ App'),
         centerTitle: true,
+        backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.blueGrey,
       body: Center(
