@@ -12,6 +12,7 @@ class QuizPage extends StatelessWidget {
       ),
       body: Center(
         child: const Text('This is the quiz page!'), // Replace with your quiz UI
+
       ),
     );
   }
