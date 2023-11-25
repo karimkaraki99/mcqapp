@@ -19,18 +19,18 @@ class _HomeState extends State<Home> {
           title: const Text('MCQ App'),
           centerTitle: true,
         ),
+      backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Add some text or widgets if needed
+
             const Text(
               'Welcome to MCQ App!',
               style: TextStyle(fontSize: 20),
             ),
-            const SizedBox(height: 20), // Add some spacing
+            const SizedBox(height: 20),
 
-            // Add the button to navigate to the quiz page
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
