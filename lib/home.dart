@@ -27,29 +27,35 @@ class _HomeState extends State<Home> {
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => QuizPage()),
-                );
-              },
-              child: const Text(
-                'Start Game',
-                style: TextStyle(fontSize: 20, color: Colors.blueGrey),
-              ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuizPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white, // Set the background color to white
             ),
+            child: const Text(
+              'Start Game',
+              style: TextStyle(fontSize: 20, color: Colors.blueGrey),
+            ),
+          ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Close the app
-                SystemNavigator.pop();
-              },
-              child: const Text(
-                'Exit App',
-                style: TextStyle(fontSize: 20, color: Colors.red),
-              ),
-            ),
+        ElevatedButton(
+          onPressed: () {
+            // Close the app
+            SystemNavigator.pop();
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Colors.white, // Set the background color to white
+          ),
+          child: const Text(
+            'Exit App',
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ),
+        ),
           ],
         ),
       ),
