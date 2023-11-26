@@ -135,7 +135,7 @@ class _QuizPageState extends State<QuizPage> {
                   _answerQuestion(answer['isCorrect'] as bool);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.purple,
+                  backgroundColor: Colors.purple,
                   minimumSize: Size(double.infinity, 50),
                 ),
                 child: Text(answer['text'] as String, style: TextStyle(fontSize: 16)),
@@ -161,7 +161,7 @@ class _QuizPageState extends State<QuizPage> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
+                backgroundColor: Colors.purple,
                 minimumSize: Size(double.infinity, 50),
               ),
               child: const Text('Restart Quiz', style: TextStyle(fontSize: 16)),
@@ -172,7 +172,7 @@ class _QuizPageState extends State<QuizPage> {
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
+                backgroundColor: Colors.purple,
                 minimumSize: Size(double.infinity, 50),
               ),
               child: const Text('Main Page', style: TextStyle(fontSize: 16)),

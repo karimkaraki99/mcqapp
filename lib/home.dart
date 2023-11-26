@@ -23,9 +23,15 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              'assets/scoutwidget.png', // Replace with your actual path
+              width: 250,
+              height: 250,
+            ),
+            const SizedBox(height: 20),
             const Text(
               'Welcome to MCQ App!',
-              style: TextStyle(fontSize: 25, color: Colors.white),
+              style: TextStyle(fontSize: 25, color: Colors.purple),
             ),
             const SizedBox(height: 20),
         ElevatedButton(
@@ -36,12 +42,12 @@ class _HomeState extends State<Home> {
             );
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.green,
-            fixedSize: Size(280, 100),
+            backgroundColor: Colors.purple,
+            fixedSize: Size(220, 80),
           ),
             child: const Text(
               'Start Game',
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(fontSize: 26, color: Colors.white),
             ),
           ),
             const SizedBox(height: 20),
@@ -50,7 +56,7 @@ class _HomeState extends State<Home> {
             SystemNavigator.pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            backgroundColor: Colors.red,
             fixedSize: Size(220, 80),
           ),
 
