@@ -150,7 +150,7 @@ class _QuizPageState extends State<QuizPage> {
                   backgroundColor: Colors.purple,
                   minimumSize: Size(350, 50),
                 ),
-                child: Text(answer['text'] as String, style: TextStyle(fontSize: 16)),
+                child: Text(answer['text'] as String, style: TextStyle(fontSize: 16,color:Colors.white)),
               ),
             );
           }).toList(),
