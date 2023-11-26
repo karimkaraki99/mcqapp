@@ -44,6 +44,9 @@ class _HomeState extends State<Home> {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.purple,
             fixedSize: Size(220, 80),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
             child: const Text(
               'Start Game',
@@ -58,6 +61,9 @@ class _HomeState extends State<Home> {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
             fixedSize: Size(220, 80),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
 
           child: const Text(

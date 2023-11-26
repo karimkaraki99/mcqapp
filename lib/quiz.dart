@@ -175,6 +175,9 @@ class _QuizPageState extends State<QuizPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple,
                 minimumSize: Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
               ),
               child: const Text('Restart Quiz', style: TextStyle(fontSize: 16)),
             ),
@@ -186,6 +189,9 @@ class _QuizPageState extends State<QuizPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 minimumSize: Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
               ),
               child: const Text('Main Page', style: TextStyle(fontSize: 16)),
             ),
