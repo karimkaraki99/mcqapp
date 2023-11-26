@@ -14,11 +14,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MCQ App',style: TextStyle(fontSize: 25, color: Colors.black), ),
+        title: const Text('MCQ App',style: TextStyle(fontSize: 25, color: Colors.white), ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.purple,
       ),
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,12 +36,12 @@ class _HomeState extends State<Home> {
             );
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
+            primary: Colors.green,
             fixedSize: Size(280, 100),
           ),
             child: const Text(
               'Start Game',
-              style: TextStyle(fontSize: 30, color: Colors.black),
+              style: TextStyle(fontSize: 30, color: Colors.white),
             ),
           ),
             const SizedBox(height: 20),
@@ -50,13 +50,13 @@ class _HomeState extends State<Home> {
             SystemNavigator.pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
+            primary: Colors.red,
             fixedSize: Size(220, 80),
           ),
 
           child: const Text(
             'Exit App',
-            style: TextStyle(fontSize: 26, color: Colors.red),
+            style: TextStyle(fontSize: 26, color: Colors.white),
           ),
         ),
           ],

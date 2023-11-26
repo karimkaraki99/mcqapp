@@ -11,50 +11,51 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   final List<Map<String, Object>> _questions = [
     {
-      'questionText': 'What is the capital of France?',
+      'questionText': 'What is the Scout Motto?',
       'answers': [
-        {'text': 'Berlin', 'isCorrect': false},
-        {'text': 'Paris', 'isCorrect': true},
-        {'text': 'Madrid', 'isCorrect': false},
-        {'text': 'Rome', 'isCorrect': false},
+        {'text': 'Be Prepared', 'isCorrect': true},
+        {'text': 'Do a Good Turn Daily', 'isCorrect': false},
+        {'text': 'On My Honor', 'isCorrect': false},
+        {'text': 'Courteous, Kind, Obedient', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which programming language is Flutter based on?',
+      'questionText': 'Who founded the Boy Scouts of America?',
       'answers': [
-        {'text': 'Java', 'isCorrect': false},
-        {'text': 'Dart', 'isCorrect': true},
-        {'text': 'Swift', 'isCorrect': false},
-        {'text': 'Kotlin', 'isCorrect': false},
+        {'text': 'Baden-Powell', 'isCorrect': false},
+        {'text': 'Daniel Carter Beard', 'isCorrect': false},
+        {'text': 'Lord Robert Baden-Powell', 'isCorrect': true},
+        {'text': 'William D. Boyce', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the largest planet in our solar system?',
+      'questionText': 'What is the highest rank in Boy Scouts of America?',
       'answers': [
-        {'text': 'Earth', 'isCorrect': false},
-        {'text': 'Jupiter', 'isCorrect': true},
-        {'text': 'Mars', 'isCorrect': false},
-        {'text': 'Saturn', 'isCorrect': false},
+        {'text': 'First Class', 'isCorrect': false},
+        {'text': 'Life Scout', 'isCorrect': false},
+        {'text': 'Eagle Scout', 'isCorrect': true},
+        {'text': 'Star Scout', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'In which year did the Titanic sink?',
+      'questionText': 'What is the traditional method of starting a campfire in scouting?',
       'answers': [
-        {'text': '1905', 'isCorrect': false},
-        {'text': '1912', 'isCorrect': true},
-        {'text': '1920', 'isCorrect': false},
-        {'text': '1935', 'isCorrect': false},
+        {'text': 'Lighter fluid', 'isCorrect': false},
+        {'text': 'Matches', 'isCorrect': false},
+        {'text': 'Fire starter cubes', 'isCorrect': false},
+        {'text': 'Wood and friction (fire bow or fire plough)', 'isCorrect': true},
       ],
     },
     {
-      'questionText': 'Who wrote "Romeo and Juliet"?',
+      'questionText': 'What is the name of the award given for completing a high-adventure base trek in Boy Scouts of America?',
       'answers': [
-        {'text': 'Charles Dickens', 'isCorrect': false},
-        {'text': 'William Shakespeare', 'isCorrect': true},
-        {'text': 'Jane Austen', 'isCorrect': false},
-        {'text': 'Mark Twain', 'isCorrect': false},
+        {'text': 'Scouting Adventure Award', 'isCorrect': false},
+        {'text': 'Eagle Scout Award', 'isCorrect': false},
+        {'text': 'Summit Award', 'isCorrect': false},
+        {'text': '50-Miler Award', 'isCorrect': true},
       ],
     },
+
   ];
 
   int _questionIndex = 0;
@@ -106,9 +107,9 @@ class _QuizPageState extends State<QuizPage> {
       appBar: AppBar(
         title: const Text('MCQ Quiz'),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.purple,
       ),
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: _questionIndex < _questions.length
           ? Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +122,7 @@ class _QuizPageState extends State<QuizPage> {
           Center(
             child: Text(
               _questions[_questionIndex]['questionText'] as String,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.purple),
               textAlign: TextAlign.center,
             ),
           ),
@@ -134,7 +135,7 @@ class _QuizPageState extends State<QuizPage> {
                   _answerQuestion(answer['isCorrect'] as bool);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
+                  primary: Colors.purple,
                   minimumSize: Size(double.infinity, 50),
                 ),
                 child: Text(answer['text'] as String, style: TextStyle(fontSize: 16)),
@@ -160,7 +161,7 @@ class _QuizPageState extends State<QuizPage> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
+                primary: Colors.purple,
                 minimumSize: Size(double.infinity, 50),
               ),
               child: const Text('Restart Quiz', style: TextStyle(fontSize: 16)),
@@ -171,7 +172,7 @@ class _QuizPageState extends State<QuizPage> {
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
+                primary: Colors.purple,
                 minimumSize: Size(double.infinity, 50),
               ),
               child: const Text('Main Page', style: TextStyle(fontSize: 16)),
