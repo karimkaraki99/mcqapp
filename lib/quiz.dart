@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({Key? key}) : super(key: key);
@@ -106,29 +106,39 @@ class _QuizPageState extends State<QuizPage> {
       appBar: AppBar(
         title: const Text('MCQ Quiz'),
         centerTitle: true,
+        backgroundColor: Colors.white,
       ),
+      backgroundColor: Colors.blueGrey,
       body: _questionIndex < _questions.length
           ? Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('Time left: $_timerSeconds seconds'),
+          Text(
+            'Time left: $_timerSeconds seconds',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+          ),
           const SizedBox(height: 20),
-
           Center(
             child: Text(
               _questions[_questionIndex]['questionText'] as String,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
               textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(height: 20),
-
           ...(_questions[_questionIndex]['answers'] as List<Map<String, Object>>).map((answer) {
-            return ElevatedButton(
-              onPressed: () {
-                _answerQuestion(answer['isCorrect'] as bool);
-              },
-              child: Text(answer['text'] as String),
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  _answerQuestion(answer['isCorrect'] as bool);
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  minimumSize: Size(double.infinity, 50),
+                ),
+                child: Text(answer['text'] as String, style: TextStyle(fontSize: 16)),
+              ),
             );
           }).toList(),
         ],
@@ -139,22 +149,32 @@ class _QuizPageState extends State<QuizPage> {
           children: [
             Text(
               'Quiz completed! Total Score: $_totalScore',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => QuizPage()),
+                  context,
+                  MaterialPageRoute(builder: (context) => QuizPage()),
                 );
               },
-              child: const Text('Restart Quiz'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: const Text('Restart Quiz', style: TextStyle(fontSize: 16)),
             ),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Main Page'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                minimumSize: Size(double.infinity, 50),
+              ),
+              child: const Text('Main Page', style: TextStyle(fontSize: 16)),
             ),
           ],
         ),

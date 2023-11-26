@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MCQ APP',
-      home: Home() // calls the main page to display the application interface
+      home: Home()
     );
   }
 }

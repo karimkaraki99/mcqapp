@@ -28,19 +28,20 @@ class _HomeState extends State<Home> {
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => QuizPage()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white,
-            ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => QuizPage()),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Colors.white,
+            fixedSize: Size(280, 100),
+          ),
             child: const Text(
               'Start Game',
-              style: TextStyle(fontSize: 20, color: Colors.black),
+              style: TextStyle(fontSize: 30, color: Colors.black),
             ),
           ),
             const SizedBox(height: 20),
@@ -50,10 +51,12 @@ class _HomeState extends State<Home> {
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.white,
+            fixedSize: Size(220, 80),
           ),
+
           child: const Text(
             'Exit App',
-            style: TextStyle(fontSize: 20, color: Colors.red),
+            style: TextStyle(fontSize: 26, color: Colors.red),
           ),
         ),
           ],
