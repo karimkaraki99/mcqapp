@@ -62,6 +62,7 @@ class _QuizPageState extends State<QuizPage> {
   int _totalScore = 0;
   int _timerSeconds = 15;
   late Timer _timer;
+  int get _questionNumber => _questionIndex + 1;
 
   @override
   void initState() {
@@ -70,7 +71,13 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void _shuffleAndSetQuestions() {
-    _questions.shuffle();
+    for( int i = 0; i < 5;i++){
+      _questions[i];}
+
+    _startTimer();
+  }
+
+  void _startTimer() {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         if (_timerSeconds > 0) {
@@ -114,6 +121,11 @@ class _QuizPageState extends State<QuizPage> {
           ? Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          Text(
+            'Question: $_questionNumber',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.purple),
+          ),
+          const SizedBox(height: 20),
           Text(
             'Time left: $_timerSeconds seconds',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
