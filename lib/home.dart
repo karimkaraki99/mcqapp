@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MCQ App',style: TextStyle(fontSize: 25, color: Colors.white), ),
+        title: const Text('MCQ Scout App',style: TextStyle(fontSize: 25, color: Colors.white), ),
         centerTitle: true,
         backgroundColor: Colors.purple,
       ),
@@ -24,13 +24,13 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/scoutwidget.png', // Replace with your actual path
+              'assets/scoutwidget.png',
               width: 250,
               height: 250,
             ),
             const SizedBox(height: 20),
             const Text(
-              'Welcome to MCQ App!',
+              'Welcome to the Scout Quiz!',
               style: TextStyle(fontSize: 25, color: Colors.purple),
             ),
             const SizedBox(height: 20),

@@ -105,7 +105,7 @@ class _QuizPageState extends State<QuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MCQ Quiz'),
+        title: const Text('Scout Quiz'),
         centerTitle: true,
         backgroundColor: Colors.purple,
       ),
