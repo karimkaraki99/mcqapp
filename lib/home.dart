@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
            ElevatedButton(onPressed: (){
              Navigator.push(
                context,
-               MaterialPageRoute(builder: (context) => ShowQuestions()),
+               MaterialPageRoute(builder: (context) => showQuestions()),
              );
            }, child: Text('test'))
           ],
