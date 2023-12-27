@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:proejctmcq/testing.dart';
 import 'quiz.dart';
+import 'testing.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -71,6 +73,12 @@ class _HomeState extends State<Home> {
             style: TextStyle(fontSize: 26, color: Colors.white),
           ),
         ),
+           ElevatedButton(onPressed: (){
+             Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) => ShowQuestions()),
+             );
+           }, child: Text('test'))
           ],
         ),
       ),
