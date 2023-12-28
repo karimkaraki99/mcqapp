@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:proejctmcq/testing.dart';
-import 'quiz.dart';
-import 'testing.dart';
+import 'package:proejctmcq/quiz_page.dart';
+import 'answers.dart';
+import 'draft.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,49 +39,63 @@ class _HomeState extends State<Home> {
               style: TextStyle(fontSize: 25, color: Colors.purple),
             ),
             const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => QuizPage()),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.purple,
-            fixedSize: Size(220, 80),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
+              ElevatedButton(
+                onPressed :() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ShowQuestions()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                  fixedSize: Size(220, 80),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: const Text(
+                  'Start Game',
+                  style: TextStyle(fontSize: 26, color: Colors.white),
+                ),
+              ),
+              const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed :() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShowAnswers()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple,
+                fixedSize: Size(220, 80),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+              child: const Text(
+                'Answers',
+                style: TextStyle(fontSize: 26, color: Colors.white),
+              ),
             ),
-          ),
-            child: const Text(
-              'Start Game',
-              style: TextStyle(fontSize: 26, color: Colors.white),
-            ),
-          ),
             const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            SystemNavigator.pop();
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red,
-            fixedSize: Size(220, 80),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
+              ElevatedButton(
+                onPressed: () {
+                  SystemNavigator.pop();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  fixedSize: Size(220, 80),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
 
-          child: const Text(
-            'Exit App',
-            style: TextStyle(fontSize: 26, color: Colors.white),
-          ),
-        ),
-           ElevatedButton(onPressed: (){
-             Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context) => showQuestions()),
-             );
-           }, child: Text('test'))
+                child: const Text(
+                  'Exit App',
+                  style: TextStyle(fontSize: 26, color: Colors.white),
+                ),
+              ),
           ],
         ),
       ),
