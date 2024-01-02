@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'answers.dart';
+import 'show_answers.dart';
 
 class Question {
   int id;
@@ -49,7 +49,7 @@ class _ShowQuestionsState extends State<ShowQuestions> {
   }
 
   Future<void> _fetchQuestions() async {
-    final response = await http.get(Uri.parse('https://scoutquizapp.000webhostapp.com/getAllQuestions.php'));
+    final response = await http.get(Uri.parse('http://192.168.0.116/scoutquizapp/getAllQuestions.php'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonResponse = json.decode(response.body);
@@ -118,7 +118,7 @@ class _ShowQuestionsState extends State<ShowQuestions> {
   String _rating() {
     String _ratingText = '';
 
-    if (percentage >= 0.5 && percentage < 0.6) {
+    if (percentage >= 0 && percentage < 0.6) {
       _ratingText = 'Not Good';
     } else if (percentage >= 0.6 && percentage < 0.7) {
       _ratingText = 'You Can Do Better';
@@ -157,9 +157,12 @@ class _ShowQuestionsState extends State<ShowQuestions> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Scout Quiz Questions'),
+        title: const Text('Scout Quiz Questions',style: TextStyle(color: Colors.white),),
         centerTitle: true,
         backgroundColor: Colors.purple,
+        iconTheme: IconThemeData(
+          color: Colors.white
+        ),
       ),
       body: _questions.isNotEmpty
           ? Center(
@@ -229,7 +232,10 @@ class _ShowQuestionsState extends State<ShowQuestions> {
                           child: Text(
                             answer['text'],
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(
+                                fontSize: 16,
+                            color: _revealAnswer?Colors.black:Colors.white
+                            ),
                           ),
                         ),
                   )
@@ -256,7 +262,7 @@ class _ShowQuestionsState extends State<ShowQuestions> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Quiz completed! Total Score: $_totalScore',
+              'Quiz completed! Total Score: $_totalScore/${_questions.length}',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
@@ -298,7 +304,7 @@ class _ShowQuestionsState extends State<ShowQuestions> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
-              child: const Text('Restart Quiz', style: TextStyle(fontSize: 16)),
+              child: const Text('Restart Quiz', style: TextStyle(fontSize: 16,color: Colors.white)),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
@@ -309,13 +315,13 @@ class _ShowQuestionsState extends State<ShowQuestions> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.purple,
                 minimumSize: Size(200, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
-              child: const Text('Answers', style: TextStyle(fontSize: 16)),
+              child: const Text('Answers', style: TextStyle(fontSize: 16,color: Colors.white)),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
@@ -323,13 +329,13 @@ class _ShowQuestionsState extends State<ShowQuestions> {
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.purple,
                 minimumSize: Size(200, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
-              child: const Text('Main Page', style: TextStyle(fontSize: 16)),
+              child: const Text('Main Page', style: TextStyle(fontSize: 16,color: Colors.white)),
             ),
           ],
         ),
