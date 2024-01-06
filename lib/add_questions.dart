@@ -21,7 +21,7 @@ class _AddQuestionsState extends State<AddQuestions> {
   int correctAnswerIndex = -1;
 
   Future<void> _insertQuestionAndAnswers() async {
-    final Uri apiUrl = Uri.parse('http://192.168.0.116/scoutquizapp/addQuestions.php');
+    final Uri apiUrl = Uri.parse('https://karim.hexacodes.org/addQuestions.php');
 
     final List<Map<String, dynamic>> answers = List.generate(
       4,

@@ -36,7 +36,7 @@ class _ShowAnswers extends State<ShowAnswers> {
   }
 
   Future<void> _fetchQuestions() async {
-    final response = await http.get(Uri.parse('http://192.168.0.116/scoutquizapp/getAllQuestions.php'));
+    final response = await http.get(Uri.parse('https://karim.hexacodes.org/getAllQuestions.php'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonResponse = json.decode(response.body);
